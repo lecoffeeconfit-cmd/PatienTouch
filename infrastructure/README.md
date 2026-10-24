@@ -1,0 +1,13 @@
+# Database and deployment boundary
+
+Phase 1 runs with public synthetic fixtures and an in-memory API. No database, Supabase project, domain, cloud secret, or VPS is assumed or connected. Nothing here deploys to Coolify or applies a migration automatically.
+
+`migrations/0001_foundation.sql` is a reviewable PostgreSQL foundation. Production IDs are UUIDs; human-readable demo IDs are intentionally never database seed data. Use PostgreSQL 15+ for a future local validation environment. The migration has not been applied to a live server as part of Phase 1.
+
+Every patient relationship includes an organization key. Session children also bind their patient and session in the same foreign key, so an otherwise valid ID cannot cross tenants or patients. Separate tables maintain progress notes, psychotherapy notes, clinician-approved portal updates, and private journals. Recording has a database constraint keeping it disabled.
+
+RLS is enabled on every table. Sensitive patient tables force RLS; users, memberships and assignments use tightly scoped `SECURITY DEFINER` lookup helpers owned by a non-login migration owner to avoid policy recursion. Fixed search paths and schema-qualified tables prevent function substitution. Runtime roles must never own tables, be superusers, have `BYPASSRLS`, or own these helpers. Functions and the helper schema have no `PUBLIC` grants; a future adapter must grant only the required function execution and table operations. No write policy or runtime grants are supplied, so mutation access defaults to deny. Review RLS under the exact deployment roles before use.
+
+An authentication adapter must map a verified provider subject to `users.auth_subject`. For Supabase/PostgREST, policy helpers can read the verified JWT subject from `request.jwt.claims`. A trusted API may instead set `app.auth_subject` only with `SET LOCAL` inside each transaction after verification. End users must never receive SQL credentials or be allowed to select arbitrary subjects. Connection pool transactions must reset context. Memberships, assignments and claims from a browser are never trusted.
+
+Before Phase 2 database use: provision a development database, apply/revert migrations under controlled ownership, create a least-privilege runtime role, test RLS with two organizations and all five roles, implement transactional audit persistence, add write policies and controlled signing/amendment workflows, plan backup/restore and deletion, and review retention and records-access obligations. Future payment, insurance, messaging, storage, recording and AI adapters require independent implementation and review.

@@ -1,0 +1,20 @@
+{
+  "name": "@patient-touch/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "start": "tsx src/server.ts",
+    "build": "tsc --noEmit",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@patient-touch/auth": "*",
+    "@patient-touch/schemas": "*",
+    "@patient-touch/types": "*",
+    "fastify": "^5.6.1",
+    "tsx": "^4.20.6"
+  }
+}

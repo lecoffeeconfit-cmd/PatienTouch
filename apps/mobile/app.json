@@ -1,0 +1,16 @@
+{
+  "expo": {
+    "name": "Patient Touch",
+    "slug": "patient-touch",
+    "scheme": "patienttouch",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "platforms": ["ios", "android", "web"],
+    "ios": { "supportsTablet": true },
+    "android": { "predictiveBackGestureEnabled": true },
+    "web": { "bundler": "metro", "output": "static", "name": "Patient Touch Demo" },
+    "plugins": ["expo-router"],
+    "experiments": { "typedRoutes": true }
+  }
+}

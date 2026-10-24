@@ -1,0 +1,277 @@
+export type RouteItem = {
+  slug: string;
+  title: string;
+  description: string;
+  icon: string;
+  group?: string;
+};
+export const therapistRoutes: RouteItem[] = [
+  {
+    slug: 'today',
+    title: 'Today',
+    description: 'A little clarity for the day ahead.',
+    icon: 'home',
+    group: 'main',
+  },
+  {
+    slug: 'calendar',
+    title: 'Calendar',
+    description: 'Make space for meaningful conversations.',
+    icon: 'calendar',
+    group: 'main',
+  },
+  {
+    slug: 'patients',
+    title: 'Patients',
+    description: 'The people at the heart of your practice.',
+    icon: 'users',
+    group: 'main',
+  },
+  {
+    slug: 'journey',
+    title: 'Patient journey',
+    description: 'A connected picture of care, one moment at a time.',
+    icon: 'journey',
+    group: 'main',
+  },
+  {
+    slug: 'sessions',
+    title: 'Session library',
+    description: 'Every conversation, thoughtfully connected.',
+    icon: 'sessions',
+    group: 'main',
+  },
+  {
+    slug: 'messages',
+    title: 'Messages',
+    description: 'Keep the conversation connected between sessions.',
+    icon: 'message',
+    group: 'main',
+  },
+  {
+    slug: 'resources',
+    title: 'Resources',
+    description: 'Small tools. Meaningful progress.',
+    icon: 'book',
+    group: 'main',
+  },
+  {
+    slug: 'notes',
+    title: 'Progress notes',
+    description: 'Ordinary clinical documentation for continuity of care.',
+    icon: 'notes',
+    group: 'clinical',
+  },
+  {
+    slug: 'psychotherapy-notes',
+    title: 'Psychotherapy notes',
+    description: 'Separately maintained process notes with distinct access rules.',
+    icon: 'lock',
+    group: 'clinical',
+  },
+  {
+    slug: 'updates',
+    title: 'Patient updates',
+    description: 'Clinician-approved takeaways prepared for the patient portal.',
+    icon: 'sparkles',
+    group: 'clinical',
+  },
+  {
+    slug: 'treatment-plans',
+    title: 'Treatment plans',
+    description: 'A shared direction. Achievable steps.',
+    icon: 'target',
+    group: 'clinical',
+  },
+  {
+    slug: 'telehealth',
+    title: 'Telehealth',
+    description: 'A considered space for remote care.',
+    icon: 'video',
+    group: 'clinical',
+  },
+  {
+    slug: 'forms',
+    title: 'Intake & forms',
+    description: 'A thoughtful beginning to care.',
+    icon: 'forms',
+    group: 'practice',
+  },
+  {
+    slug: 'billing',
+    title: 'Billing & payments',
+    description: 'A clear view of the financial side of care.',
+    icon: 'billing',
+    group: 'practice',
+  },
+  {
+    slug: 'insurance',
+    title: 'Insurance & claims',
+    description: 'Coverage, eligibility, and claims in one place.',
+    icon: 'shield',
+    group: 'practice',
+  },
+  {
+    slug: 'reports',
+    title: 'Reports',
+    description: 'Understand your practice at a glance.',
+    icon: 'chart',
+    group: 'practice',
+  },
+  {
+    slug: 'team',
+    title: 'Team & permissions',
+    description: 'The right access for everyone in your practice.',
+    icon: 'users',
+    group: 'practice',
+  },
+  {
+    slug: 'consent',
+    title: 'Consent & privacy',
+    description: 'Choice and transparency, built into the foundation.',
+    icon: 'shield',
+    group: 'practice',
+  },
+  {
+    slug: 'settings',
+    title: 'Practice settings',
+    description: 'Make room for the way you work.',
+    icon: 'settings',
+    group: 'practice',
+  },
+  {
+    slug: 'data',
+    title: 'Import & export',
+    description: 'A deliberate approach to moving practice records.',
+    icon: 'download',
+    group: 'practice',
+  },
+  {
+    slug: 'notifications',
+    title: 'Notifications',
+    description: 'The updates that deserve your attention.',
+    icon: 'bell',
+    group: 'practice',
+  },
+  {
+    slug: 'onboarding',
+    title: 'Welcome to Patient Touch',
+    description: 'Your practice, thoughtfully set up.',
+    icon: 'sparkles',
+    group: 'practice',
+  },
+];
+export const patientRoutes: RouteItem[] = [
+  {
+    slug: 'home',
+    title: 'Home',
+    description: 'Your space to reflect, connect, and keep moving forward.',
+    icon: 'home',
+    group: 'main',
+  },
+  {
+    slug: 'appointments',
+    title: 'Appointments',
+    description: 'Time set aside for you.',
+    icon: 'calendar',
+    group: 'main',
+  },
+  {
+    slug: 'journey',
+    title: 'My Journey',
+    description: 'Progress unfolds one small step at a time.',
+    icon: 'journey',
+    group: 'main',
+  },
+  {
+    slug: 'sessions',
+    title: 'My sessions',
+    description: 'Carry something meaningful from every conversation.',
+    icon: 'sessions',
+    group: 'main',
+  },
+  {
+    slug: 'care-plan',
+    title: 'Care plan',
+    description: 'Your goals, at your own pace.',
+    icon: 'target',
+    group: 'main',
+  },
+  {
+    slug: 'messages',
+    title: 'Messages',
+    description: 'Stay connected with your care team.',
+    icon: 'message',
+    group: 'main',
+  },
+  {
+    slug: 'journal',
+    title: 'Private journal',
+    description: 'A quiet space for your own reflections.',
+    icon: 'notes',
+    group: 'main',
+  },
+  {
+    slug: 'resources',
+    title: 'Shared resources',
+    description: 'Helpful practices for the space between sessions.',
+    icon: 'book',
+    group: 'main',
+  },
+  {
+    slug: 'bookmarks',
+    title: 'Bookmarks',
+    description: 'Moments you want to come back to.',
+    icon: 'bookmark',
+    group: 'account',
+  },
+  {
+    slug: 'forms',
+    title: 'Forms & consent',
+    description: 'Review your choices and care information.',
+    icon: 'forms',
+    group: 'account',
+  },
+  {
+    slug: 'billing',
+    title: 'Billing & receipts',
+    description: 'A clear view of your care expenses.',
+    icon: 'billing',
+    group: 'account',
+  },
+  {
+    slug: 'notifications',
+    title: 'Notifications',
+    description: 'Your latest care updates.',
+    icon: 'bell',
+    group: 'account',
+  },
+  {
+    slug: 'settings',
+    title: 'Privacy & account',
+    description: 'Your preferences, your choices.',
+    icon: 'settings',
+    group: 'account',
+  },
+  {
+    slug: 'records',
+    title: 'Records access',
+    description: 'Request access to your care records.',
+    icon: 'download',
+    group: 'account',
+  },
+  {
+    slug: 'help',
+    title: 'Help & support',
+    description: 'Find your way around Patient Touch.',
+    icon: 'help',
+    group: 'account',
+  },
+];
+export const therapistDetailSlugs = ['patients/patient-demo-avery', 'sessions/session-demo-1'];
+export const patientDetailSlugs = ['sessions/session-demo-1', 'sessions/session-demo-1/replay'];
+export function getRoute(role: 'therapist' | 'patient', slug: string) {
+  return (role === 'therapist' ? therapistRoutes : patientRoutes).find(
+    (route) => route.slug === slug,
+  );
+}
